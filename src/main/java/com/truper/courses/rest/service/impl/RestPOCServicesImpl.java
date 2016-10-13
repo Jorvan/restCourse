@@ -6,6 +6,7 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
+import com.sun.jersey.api.view.ImplicitProduces;
 import com.truper.courses.rest.dao.RestPOC_DAO;
 import com.truper.courses.rest.dao.impl.RestPOC_DAO_Impl;
 import com.truper.courses.rest.model.POC_POJO;
@@ -21,7 +22,6 @@ public class RestPOCServicesImpl implements RestPOCServices {
 	}
 
 	// XXX MOCK
-	@Override
 	public List<POC_POJO> restPOCService() throws BaseException {
 		List<POC_POJO> mockResponse = new ArrayList<POC_POJO>();
 		addNewPOJO(mockResponse, 1);
@@ -29,7 +29,6 @@ public class RestPOCServicesImpl implements RestPOCServices {
 		return mockResponse;
 	}
 
-	@Override
 	public List<POC_POJO> restPOCService(Integer id) throws BaseException {
 		List<POC_POJO> mockResponse = new ArrayList<POC_POJO>();
 		POC_POJO pojo = dao.getPOC_POJO(id);
